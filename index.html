@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="weatherApp">
+	<head>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, inital-scale=1">
+
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <script src="bower_components/angular/angular.min.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/directives/weather.js"></script>
+
+	<title>weather</title>
+
+	</head>
+<body>
+
+	<section id="weather" class="container-fluid" ng-controller="cityWeatherController as cityWeatherCtrl">
+
+		<div class="col-sm-6 col-md-6 col-lg-4" ng-repeat="weather in cityWeatherCtrl.city">
+			<city-weather-controller city="{{weather.city}}"></city-weather-controller>
+		</div>
+
+	</section>
+
+</body>
+</html>
